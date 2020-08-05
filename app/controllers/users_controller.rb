@@ -14,10 +14,13 @@ class UsersController < ApplicationController
       log_in @user
       flash[:success] = "Welcome to the Jungle"
       redirect_to @user
-
     else
       render 'new'
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   private
